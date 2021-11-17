@@ -1,7 +1,7 @@
 require 'calculator'
 
 describe Calculator do
-  context 'sums 2' do
+  context '.sum' do
     it 'positive numbers' do
       calc = Calculator.new
       result = calc.sum(5, 6)
@@ -15,21 +15,27 @@ describe Calculator do
     end
   end
 
-  it 'decrease 2 numbers' do
-    calc = Calculator.new
-    result = calc.decrease(10, 6)
-    expect(result).to eql(4)
+  context '.decrease' do
+    it '2 numbers' do
+      calc = Calculator.new
+      result = calc.decrease(10, 6)
+      expect(result).to eql(4)
+    end
   end
 
-  it 'divides 2 numbers' do
-    calc = Calculator.new
-    result = calc.divide(20, 5)
-    expect(result).to eq(4)
+  context '.divide' do
+    it '2 numbers' do
+      calc = Calculator.new
+      result = calc.divide(20, 5)
+      expect(result).to eq(4)
+    end
   end
 
-  it 'multiplies 2 numbers' do
-    calc = Calculator.new
-    result = calc.multiply(4, 7)
-    expect(result).to eq(28)
+  context '.multiply' do
+    it '2 numbers' do
+      calc = Calculator.new
+      result = calc.multiply(4, 7)
+      expect(result).to eq(28)
+    end
   end
 end
