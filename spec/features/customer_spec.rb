@@ -23,11 +23,11 @@ feature 'Customers', type: :feature do
     customer_name = Faker::Name.name
 
     visit new_customer_path
-    fill_in('Name', with: customer_name)
-    fill_in('E-mail', with: Faker::Internet.email)
-    fill_in('Phone', with: Faker::PhoneNumber.phone_number)
-    attach_file('Avatar', "#{Rails.root}/spec/fixtures/avatar.png")
-    choose(option: ['Yes', 'No'].sample)
+    fill_in('customer[name]', with: customer_name)
+    fill_in('customer[email]', with: Faker::Internet.email)
+    fill_in('customer[phone]', with: Faker::PhoneNumber.phone_number)
+    attach_file('customer[avatar]', "#{Rails.root}/spec/fixtures/avatar.png")
+    choose(option: ['Y', 'N'].sample)
     
     click_on('Register customer')
 
