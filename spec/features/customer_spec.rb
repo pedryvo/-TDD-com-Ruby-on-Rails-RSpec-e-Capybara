@@ -34,4 +34,10 @@ feature 'Customers', type: :feature do
     expect(page).to have_content('Customer registered with success!')
     expect(Customer.last.name).to eq(customer_name)
   end
+
+  scenario 'try to create a invalid customer' do
+    visit new_customer_path
+    click_on('Register customer')
+    expect(page).to have_content("can't be blank")
+  end
 end
