@@ -35,5 +35,7 @@ module TDDComRubyOnRailsRspecECapybara
         helper_specs: false,
         routing_specs: false
     end
+
+    config.i18n.default_locale = 'pt-BR'
   end
 end
